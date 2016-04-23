@@ -2,10 +2,8 @@ import getopt
 import sys
 import time
 import wiringpi
+from gpio import *
 
-HIGH = 1
-LOW  = 0
-OUTPUT = 1
 
 
 def blink():
@@ -15,7 +13,7 @@ def blink():
     wiringpi.pinMode(0, OUTPUT) 
     while True:
         # Write 1 ( HIGH ) to pin 6
-        wiringpi.digitalWrite(0, HIGH) 
+        wiringpi.digitalWrite(0, HIGH)
         time.sleep(0.5)
         # Write 0 ( LOW ) to pin 6
         wiringpi.digitalWrite(0, LOW)
